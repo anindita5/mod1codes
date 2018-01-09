@@ -1,0 +1,59 @@
+<html>
+<head><title>Embedding Script tag in HTML Document</title>
+
+<table> <tr> <td><span style="border-bottom-style:dotted">Script embedded in Head- Tag </span> </td> </tr>
+<tr>
+<td>
+<script>
+/*
+TODO:define variable headVar and initialize it to some integer value and display the value as
+shown in the Fig 6
+*/
+var headVar = 10;
+document.write("Value stotred in variable <i>headVar</i> is"+"<b>"+headVar+"</b>");
+</script>
+
+</td>
+</tr>
+
+</table>
+<hr>
+
+</head>
+<body>
+<table> <tr> <td><span style="border-bottom-style:dotted">Script embedded in Body Tag </span> </td></tr>
+<tr>
+<td>
+<script>
+/*
+TODO:define variable bodyVar and initialize it to some integer value and display the value as
+shown in the Fig 6
+*/
+var bodyVar =65; 
+document.write("<br>Value stotred in variable <i>bodyVar</i> is"+"<b>"+bodyVar+"</b>");
+</script>
+</td>
+</tr>
+</table>
+<hr>
+<script src="javascript1.4.js">
+</script>
+<table>
+<tr>
+<td>
+<script>
+/*
+TODO: Invoke the method addNos(headVar,bodyVar) defined in javascript.js file and pass the
+two variables headVar and bodyVar defined in the head and the body script tag and display the
+added result as shown in the Fig 6
+*/
+ var add = addNos(headVar,bodyVar);
+ document.write("The sum of the variables headVar and bodyVar is "+"<b>" +add+"</b>");
+</script>
+
+</td>
+</tr>
+</table>
+<hr>
+</body>
+</html>

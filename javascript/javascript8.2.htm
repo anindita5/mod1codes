@@ -1,0 +1,44 @@
+<html>
+
+<body style="background-color:skyblue">
+<script src="javascript8.2js.js">
+</script>
+
+<form name="frm1" align="center" >
+<h1 style="color:white"> Product Details</h2>
+<table style="border:10px solid white" align="center">
+<tr>
+	<td> Category:</td>
+	<td>
+	<select name="category"  onchange="populateProduct()">
+	<option value="None"> Select Category</option>
+	<option value="Electronics">Electronics</option>
+	<option value="Grocery">Grocery </option>
+	</select>
+	</td>
+</tr>
+<tr>
+	<td> Product:</td>
+	<td>
+	<select name="product">
+	<option value="None"> --------</option>
+	</select>
+	</td>
+</tr>
+<tr>
+	<td> Quantity:</td>
+	<td> <input type="text" name="qty"></td>
+</tr>
+<tr>
+	<td> Total Price:</td>
+	<td> <input type="text" name="price" readonly ></td>
+</tr>
+<tr>
+	<td><input type="button" value="Submit" onclick="calculateTotalprice()"> </td>
+	<td><input type="reset" value="Clear"> </td>
+</tr>
+
+</table>
+</form>
+</body>
+</html>

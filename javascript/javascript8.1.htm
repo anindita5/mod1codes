@@ -1,0 +1,99 @@
+<html>
+<head>
+<script>
+		
+	function calculatePayment()
+	{
+		var lamt = frm1.loanamt.value;
+		var rate = frm1.Rate.value;
+		var year = frm1.years.value;
+		var totalamount = Math.ceil(lamt * Math.pow((1+rate/100),year));
+		var interest = totalamount - lamt;
+		var months = year * 12;
+		var monthlyPay = totalamount / months;
+		frm1.monthlypay.value =	monthlyPay;
+		frm1.totalpay.value =	totalamount;
+		frm1.interestpayment.value	=	interest;
+		
+	}
+	function validLoan()
+	{
+		var lamt = frm1.loanamt.value;
+		if(lamt =="" || lamt ==null)
+		{
+			alert("loan amount cannot be empty");
+			return false;
+		}
+		
+		if(lamt>1500000)
+		{
+			alert("Amount of loan should be less than 15 lakhs");
+			return false;
+		}
+	}
+	function validRate()
+	{
+		var rate = frm1.Rate.value;
+		
+		if(rate =="" || rate ==null)
+		{
+			alert("interest cannot be empty");
+			return false;
+		}
+	
+	}
+	function validYear()
+	{
+		var year = frm1.years.value;
+		if(year<7 || year>15)
+		{
+			alert("Repayment Period should be between 7 yrs and 15 yrs");
+			return false;
+		}
+	
+	}
+</script>
+</head>
+<body>
+
+<h1> Enter Loan Information</h1>
+<form id="frm1" >
+<table>
+<tr>
+	<td>1) Amount of the loan (any currency):</td>
+	<td><input type="number" name="loanamt" onblur="validLoan()"> </td>
+</tr>
+<tr>
+	<td>2)Annual percentage rate of Interest:</td>
+	<td> <input type="number" name="Rate" size="5" onblur="validRate()"></td>
+</tr>
+<tr>
+	<td>3)Repayment period in years:</td>
+	<td> <input type="number" name="years" onblur="validYear()"></td>
+</tr>
+<tr>
+	<td colspan="2"><input type="Submit" value="Compute" onclick="calculatePayment()"> </td>
+</tr>
+<tr>
+	<td><h1> Payment Information</h1> </td>
+</tr>
+<tr>
+	<td>4)Your monthly payment will be: </td>
+	<td><input type="number" name="monthlypay" readonly></td>
+</tr>
+<tr>
+	<td>5)Your total payment will be: </td>
+	<td> <input type="number" name="totalpay" readonly></td>
+</tr>
+<tr>
+	<td>6)Your total interest payments will be: </td>
+	<td> <input type="number" name="interestpayment" readonly></td>
+</tr>
+</table>
+</form>
+
+
+</body>
+</html>
+
+

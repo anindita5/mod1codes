@@ -1,0 +1,26 @@
+<html>
+<head><title>Embedding Script tag in HTML Document</title>
+<script>
+//TODO:use write method in document object to display the desired output
+document.write("This text is displayed from the script tag embedded in the head tag of the doccument");
+</script>
+<hr>
+<script src="javascript1.3a.js">
+</script>
+</head>
+<body>
+<script>
+//TODO: use write method in document object to display desired the output
+document.write("<i>This text is displayed from the script tag  embedded in the body tag of the document </i>");
+</script>
+<hr>
+<p><code>The actual script is in external script file called "javascript1.3a.js"</code></p>
+<script>
+//TODO: Insert your code here to call the function dispHello() from the javascript1.3a.js file
+var str1 = dispHello();
+document.write("This text is displayed by Calling external function :" +"<b>" +str1 +"</b>");
+
+</script>
+<hr>
+</body>
+</html>

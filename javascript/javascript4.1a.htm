@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h2
+{
+border-bottom-style:dotted;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td><h2>Employees Details </h2></td>
+</tr>
+<tr>
+<td>
+<p id="demo"> </p></td>
+</tr>
+
+<script>
+var employees = ["Tove <br>", "Hege <br>", "Stale <br>", "Kai Jim <br>", "Borge <br>", "Undefined"];
+eLen = employees.length;
+text = "<ol>";
+for (i = 0; i < eLen; i++) {
+    text += "<li>" + employees[i] + "</li>";
+}
+text += "</ol>";
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>

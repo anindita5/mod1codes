@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+	var str = prompt("Enter the string");
+	var substring = prompt("Enter the substring to  be search");
+	var found = str.match(substring);
+	alert("the substring which matches is :" +found);
+	 var result_of_substr = str.substr(3,6);
+	var result_of_lowercase = str.toLowerCase();
+	var result_of_uppercase = str.toUpperCase();
+</script>
+<table>
+<tr>
+	<td> The String is </td>
+	<td> : </td>
+	<td><script>document.write(str); </script> </td>
+</tr>
+<tr>
+<td>Result of str.match  </td>
+<td> :</td>
+<td><script>document.write(found); </script></td>
+</tr>
+<tr>
+<td>Result of str.substr(3,6)  </td>
+<td> :</td>
+<td><script>document.write(result_of_substr); </script></td>
+</tr>
+<tr>
+<td colspan="3"><script>document.write(result_of_lowercase); </script></td>
+</tr>
+<tr>
+<td colspan="3"><script>document.write(result_of_uppercase); </script></td>
+</tr>
+
+</table>
+</body>
+</html>

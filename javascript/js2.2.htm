@@ -1,0 +1,60 @@
+<html>
+<head>
+<style>
+h1
+{
+	border-top-style:dotted;
+	border-bottom-style:dotted;
+	
+}
+</style>
+
+</head>
+<body>
+<script>
+		var pr = prompt("Enter the principal value");
+		var rate = prompt("Enter the rate");
+		var time = prompt("Enter the time");
+		
+		
+		var compoundInterest =Math.ceil(([pr * Math.pow((1 + rate/100),time)] - pr),5);
+		
+</script>
+
+<table>
+<tr>
+	<td colspan="5"> <h1> *******Calculate Compound Interest******* </h1><td>
+</tr>
+<tr>
+		<td> Principal</td>
+		<td> - </td>
+		<td> &nbsp;</td>
+		<td> &nbsp;</td>
+		<td> <script> document.write(pr);</script> rs</td>
+</tr>
+<tr>
+		<td> Rate</td>
+		<td> - </td>
+		<td> &nbsp;</td>
+		<td> &nbsp;</td>
+		<td> <script> document.write(rate);</script> %</td>
+</tr>
+<tr>
+		<td> Time</td>
+		<td> - </td>
+		<td> &nbsp;</td>
+		<td> &nbsp;</td>
+		<td> <script> document.write(time);</script> yr</td>
+</tr>
+<tr>
+		<td> Compound Interest</td>
+		<td> - </td>
+		<td>&nbsp; </td>
+		<td> &nbsp;</td>
+		<td> <script> document.write(compoundInterest);</script></td>
+</tr>
+
+
+</table>
+</body>
+</html>

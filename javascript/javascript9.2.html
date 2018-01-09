@@ -1,0 +1,96 @@
+<html>
+<head>
+	<script>
+		 
+		var qualArr=[["B.SC","B.A","B.Com","B.Tech"],["M.A","M.Tech","MCA","MBA"]];
+		function populateQualification()
+		{
+			var radio = frm1.g1.value;
+			var qualification = frm1.qual;
+			var radioIdx = frm1.qual.value;
+			if(radio=="UG"){
+				for(i=0;i<qualArr[0].length;i++)
+				{
+					var qualOption = new Option();
+					qualOption.text = qualArr[0][i];				//getting inner text 
+					qualification.options[i+1]=qualOption;
+				}
+			}
+			else if(radio=="PG"){
+				for(i=0;i<qualArr[1].length;i++)
+				{
+					var qualOption = new Option();
+					qualOption.text = qualArr[1][i]; 
+					//alert(qualArr[1][i]);//getting inner text 
+					qualification.options[i+1]=qualOption;
+				}
+			}
+			
+		}
+	function calculateAge()
+	{
+		var today = new Date();
+		var year1 = today.getYear();
+		var dobStr = frm1.dob.value;
+		var dob = new Date(dobStr);
+		var year = dob.getYear();
+		var age = year1 - year ;
+		return age;
+	}
+	function preview()
+	{
+		var Age = calculateAge();
+		var Name = frm1.name.value;
+		var no = frm1.phoneno.value;
+		var Email = frm1.email.value;
+		var gradlevel = frm1.g1.value;
+		var qualfication = frm1.qual.value;
+		var win = window.open("", "MsgWindow", "width=400,height=400");
+		win.document.write("Name :"+Name);
+		win.document.write("<br>Age :"+Age);
+		win.document.write("<br>Phone Number :"+no);
+		win.document.write("<br>Graduation Level:"+gradlevel);
+		win.document.write("<br>Qualification :"+Qual);
+	}
+	</script>
+</head>
+<body>
+	<form id="frm1" onsubmit="preview()">
+	<table style="border: 2px solid " height="40%" align="center"> 
+	<tr>
+		<td><b> Name:</b></td>
+		<td><input type="text" name="name" required pattern="[a-zA-Z]{3,10}"></td>
+	</tr>
+	<tr>
+		<td> <b>Date of Birth:</b></td>
+		<td><input type="date" name="dob" required > </td>
+	</tr>
+	<tr>
+		<td> <b>Phone Number:</b></td>
+		<td><input type="text" name="phoneno" required pattern="\d{3}-\d{4}-\d{4}"> </td>
+	</tr>
+	<tr>
+		<td> <b>Email:</b></td>
+		<td><input type="email" name="email" required> </td>
+	</tr>
+	<tr>
+		<td> <b>Graduation Level:</b></td>
+		<td><input type="radio" name="g1" onchange="populateQualification()" value="UG" >UG 
+		<input type="radio"name="g1" onchange="populateQualification()" value="PG" >PG
+	</td>
+	</tr>
+	<tr>
+		<td> <b>Qualification:</b></td>
+		<td><select name="qual">
+			<option value="None"> Select your Qualification</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+	<!--<td><input type="submit" value="Submit"> </td>-->
+	<td> <input type="submit" value="Preview"></td>
+	</tr>
+	</table>
+	</body>
+</body>
+</html>
